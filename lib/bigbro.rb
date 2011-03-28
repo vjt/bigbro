@@ -1,7 +1,7 @@
 require 'bigbro/railtie' if defined? Rails
 
 module BigBro
-  Version = '0.9'
+  Version = '0.9.1'
 
   module Helpers
     # Embeds the optimized Analytics code and the noscript tag with
@@ -25,14 +25,12 @@ module BigBro
       code = ''
       code.concat javascript_tag(%(
         var _gaq = #{ga_cmds.to_json};
-        $(document).ready (function () { // Because of Opera and FF <= 3.5
-          try {
-            (function(d, t, a) {
-              var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-              g[a]=a;g.src='#{ga_host}/ga.js';s.parentNode.insertBefore(g,s);
-            }) (document, 'script', 'async');
-          } catch (err) {}
-        });
+        try {
+          (function(d,t,a) {
+            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g[a]=a;g.src='#{ga_host}/ga.js';s.parentNode.insertBefore(g,s);
+          })(document, 'script', 'async');
+        } catch (err) {}
       ))
 
       code.concat(content_tag(:noscript,
