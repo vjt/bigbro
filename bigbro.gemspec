@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.files = [
     "README.md",
     "Rakefile",
-    "lib/panmind/bigbro.rb",
-    "lib/panmind/bigbro/railtie.rb",
+    "lib/bigbro.rb",
+    "lib/bigbro/railtie.rb",
     "rails/init.rb"
   ]
   s.homepage = %q{http://github.com/vjt/bigbro}

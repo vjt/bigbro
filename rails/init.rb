@@ -1,2 +1,2 @@
-require 'panmind/bigbro/railtie'
-Panmind::BigBro::Railtie.insert
+require 'bigbro/railtie'
+BigBro::Railtie.insert

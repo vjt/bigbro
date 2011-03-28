@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/rdoctask'
 
-require 'lib/panmind/bigbro'
+require 'lib/bigbro'
 
 begin
   require 'jeweler'
@@ -22,7 +22,7 @@ begin
     gemspec.extra_rdoc_files = %w( README.md )
     gemspec.has_rdoc         = true
 
-    gemspec.version          = Panmind::BigBro::Version
+    gemspec.version          = BigBro::Version
     gemspec.date             = '2010-11-23'
 
     gemspec.require_path     = 'lib'
