@@ -6,7 +6,7 @@ require 'lib/panmind/bigbro'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name             = 'panmind-bigbro'
+    gemspec.name             = 'bigbro'
 
     gemspec.summary          = 'A Google Analytics plugin for Rails'
     gemspec.description      = 'BigBro provides view helpers to generate Analytics code '      \
@@ -16,7 +16,7 @@ begin
 
     gemspec.authors          = ['Marcello Barnaba']
     gemspec.email            = 'vjt@openssl.it'
-    gemspec.homepage         = 'http://github.com/Panmind/bigbro'
+    gemspec.homepage         = 'http://github.com/vjt/bigbro'
 
     gemspec.files            = %w( README.md Rakefile rails/init.rb ) + Dir['lib/**/*']
     gemspec.extra_rdoc_files = %w( README.md )
