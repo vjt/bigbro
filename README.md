@@ -4,13 +4,7 @@ BigBro: A Google Analytics plugin for Rails
 Installation
 ------------
 
-Via RubyGems:
-
-    gem install panmind-bigbro
-
-Or via Rails Plugin:
-
-    script/plugin install git://github.com/Panmind/bigbro.git
+    gem install bigbro
 
 Usage
 -----
@@ -26,10 +20,10 @@ disable this behaviour by passing the `:track => false` option.
 Configuration
 -------------
 
-You must set your analytics account via the `Panmind::BigBro.set()` method
+You must set your analytics account via the `BigBro.set()` method
 in your `config/environment.rb`:
 
-    Panmind::BigBro.set(:account => 'UA-12345-67')
+    BigBro.set(:account => 'UA-12345-67')
 
 In production mode, the `.set()` method will raise an `ArgumentError` if
 no account is provided, unless the `:disabled` option is set to `true`.
@@ -37,11 +31,12 @@ no account is provided, unless the `:disabled` option is set to `true`.
 We use these switches to allow the developer to run the application in
 production mode on `localhost` while not sending requests to Analytics.
 
-We know that the ga.js is empty if the `Referer` is `localhost`, but on
-Panmind there are situations in which the referer is reset, thus a
-complete disable is necessary
+We know that the ga.js is empty if the `Referer` is `localhost`, but
+there are situations in which the referer is reset, thus a complete disable
+is necessary.
 
-In development mode the plugin is always disabled.
+In development mode the plugin is always disabled - unless you set an
+account via the `set` method.
 
 Testing
 -------
