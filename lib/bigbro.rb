@@ -1,7 +1,7 @@
 require 'bigbro/railtie' if defined? Rails
+require 'bigbro/version'
 
 module BigBro
-  Version = '0.9.1'
 
   module Helpers
     # Embeds the optimized Analytics code and the noscript tag with
